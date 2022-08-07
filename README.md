@@ -12,8 +12,9 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 
 ## Installation Instructions 🚀
 
-1. [Download the file gameready.sh](https://raw.githubusercontent.com/NayamAmarshe/gameready/main/gameready.sh)
-2. Find it, right click on the file, go to permission tab and give it execution permission.
-3. Double click the file, click on 'Run in Terminal' or open a new terminal window and drag the gameready.sh file onto it and press enter.
+1. Download the `Source code (zip)` from the [release page](https://github.com/NayamAmarshe/gameready/releases/latest).
+2. Unzip the file.
+3. Locate gameready.sh in the newly created gameready folder.
+4. Double click the file or open a new terminal window and drag it onto it and press enter.
 
 Enjoy!
