@@ -12,6 +12,9 @@ echo "Installing WINE"
 sudo dpkg --add-architecture i386
 sudo wget -nc -O /usr/share/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 
+# REMOVE PREVIOUS WINE PPA IF PRESENT
+sudo rm /etc/apt/sources.list.d/winehq*
+
 # GET UBUNTU VERSION
 ubuntuVersion=$(lsb_release -sc)
 sudo wget -nc -P /etc/apt/sources.list.d/ "https://dl.winehq.org/wine-builds/ubuntu/dists/${ubuntuVersion}/winehq-${ubuntuVersion}.sources"
