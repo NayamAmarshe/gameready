@@ -17,6 +17,8 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 3. Locate gameready.sh in the newly created gameready folder.
 4. Double click the file or open a new terminal window and drag it onto it and press enter.
 
+Enjoy!
+
 ## After installation 🕹
 After the installation you can use Lutris to play games with ease. 
 
@@ -36,6 +38,3 @@ __Follow these timestamps:__
 ## FAQ ❓
 - **Why not install Bottles?** Because Lutris in my experience works way better and has better compatibility.
 - **Why not install [insert driver here]?** Because drivers can be finicky and break systems if done wrong. If you know any drivers that are universally stable and improve gaming in any way, please submit a PR :)
-- 
-
-Enjoy!
