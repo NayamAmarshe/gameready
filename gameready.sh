@@ -53,7 +53,7 @@ if zenity --question --title="Install Xanmod Kernel?" --text="Your current kerne
 	{
 		echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list
 		wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -
-		sudo apt update && sudo apt install linux-xanmod
+		sudo apt update && sudo apt install linux-xanmod -y
 		zenity --info --title="Success" --text="Xanmod kernel installed! Make sure to reboot after all the script finishes its work."
 	}
 fi
