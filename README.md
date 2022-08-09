@@ -22,11 +22,10 @@ Enjoy!
 ## After installation 🕹
 After the installation you can use Lutris to play games with ease. 
 
+[**If you do not know how to use Lutris, please follow this guide on the Lunix YouTube channel**](https://www.youtube.com/watch?v=RwnDtMfhmWk)   
 __Follow these timestamps:__   
 - **03:10** Install Proton in Lutris   
 - **05:13** Add game in Lutris and Configure
-
-[If you do not know how to use Lutris, please follow this guide on the Lunix YouTube channel](https://www.youtube.com/watch?v=RwnDtMfhmWk)   
 
 
 ## Future Scope 🤫
