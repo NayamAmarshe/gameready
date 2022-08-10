@@ -53,5 +53,5 @@ After the installation you can use Lutris to play games with ease.
 
 ## FAQ ❓
 
-- **Why not install Bottles?** Because Lutris in my experience works way better and has better compatibility.
-- **Why not install [insert driver here]?** Because drivers can be finicky and break systems if done wrong. If you know any drivers that are universally stable and improve gaming in any way, please submit a PR :)
+- **Why not install Bottles?** Because Lutris in my experience has worked way better than it and also has had better compatibility.
+- **Why not install [insert driver here]?** Because drivers can be finicky and break systems if done the wrong way. If you know of any drivers that are universally stable and improve gaming in any way, please submit a PR :)
