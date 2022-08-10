@@ -1,8 +1,11 @@
+<div align="center">
+
 # GameReady 🎮
 
 Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in just a single click. No hassle, no hustle.
+</div>
 
-## Supported Operating Systems 🚦
+# Supported Operating Systems 🚦
 
 - ZorinOS
 - Ubuntu
@@ -11,7 +14,7 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 - Pop!\_OS
 - Any other distro based on Ubuntu 20.04+
 
-## Installation Instructions 🚀
+# Installation Instructions 🚀
 
 #### Method 1
 
@@ -34,7 +37,7 @@ wget -nv https://maglit.me/gameready && bash gameready.sh; rm -f gamerady.sh
 
 Enjoy!
 
-## After installation 🕹
+# After installation 🕹
 
 After the installation you can use Lutris to play games with ease.
 
@@ -44,14 +47,14 @@ After the installation you can use Lutris to play games with ease.
 - **03:10** Install Proton in Lutris
 - **05:13** Add game in Lutris and Configure
 
-## Future Scope 🤫
+# Future Scope 🤫
 
 - Arch support btw (PR APPRECIATED)
 - Fedora support (PR APPRECIATED)
 - Extra optimizations that could be done via drivers or applications (SUGGESTIONS NEEDED)
 - Mangohud + GOverlay?
 
-## FAQ ❓
+# FAQ ❓
 
 - **Why not install Bottles?** Because Lutris in my experience has worked way better than it and also has had better compatibility.
 - **Why not install [insert driver here]?** Because drivers can be finicky and break systems if done the wrong way. If you know of any drivers that are universally stable and improve gaming in any way, please submit a PR :)
