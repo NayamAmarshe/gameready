@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# COLOR VARIABLES
 RED="\e[31m"
 ENDCOLOR="\e[0m"
 
+# SHOW INITIAL DIALOGS
 zenity --info --text="Script made by Nayam Amarshe for the Lunix YouTube channel" --no-wrap
 zenity --warning --width 300 --title="Before Starting the Installation" --text="You may see a text asking for your password, just enter your password in the terminal. You do not worry if it doesn't show you what you typed, it's normal."
 
@@ -36,7 +38,7 @@ sudo add-apt-repository -y ppa:lutris-team/lutris
 sudo apt -y update
 sudo apt -y install lutris
 
-# INSTALL Gamemode
+# INSTALL GAMEMODE
 echo -e "\n\n${RED}<-- Installing Gamemode -->${ENDCOLOR}"
 rm -rf gamemode
 sudo apt -y install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential
@@ -45,11 +47,11 @@ cd gamemode || {
 	echo "Failed at command cd gamemode"
 	exit 1
 }
-git checkout 1.7 # omit to build the master branch
+git checkout 1.7
 zenity --warning --width 300 --title="Before Starting the Installation" --text="You'll be asked something like 'Install to /usr?', just press the Y key and hit enter!"
 ./bootstrap.sh
 
-# XANMOD KERNEL
+# INSTALL XANMOD KERNEL
 if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your current kernel is $(uname -r). We're going to install Xanmod kernel next, Xanmod is for enabling extra performance patches for kernels and this step is required for kernels below v5.16. Do you want to install Xanmod?"; then
 	{
 		echo -e "\n\n${RED}<-- Installing Xanmod Kernel -->${ENDCOLOR}"
