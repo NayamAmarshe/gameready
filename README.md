@@ -22,7 +22,7 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 2. Copy the following line:
 
 ```bash
-wget -nv https://maglit.me/gameready && bash gameready; rm -f gamerady
+wget -nv https://maglit.me/gameready && bash gameready; rm -f gameready
 ```
 
 3. Paste it into the terminal.
