@@ -46,9 +46,9 @@ After the installation you can use Lutris to play games with ease.
 
 ## Future Scope 🤫
 
-- Arch support btw
-- Fedora support
-- Extra optimizations that could be done via drivers or applications
+- Arch support btw (PR APPRECIATED)
+- Fedora support (PR APPRECIATED)
+- Extra optimizations that could be done via drivers or applications (SUGGESTIONS NEEDED)
 - Mangohud + GOverlay?
 
 ## FAQ ❓
