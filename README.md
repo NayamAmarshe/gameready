@@ -47,6 +47,9 @@ After the installation you can use Lutris to play games with ease.
 - **03:10** Install Proton in Lutris
 - **05:13** Add game in Lutris and Configure
 
+# Extras 🤓
+- Read this if you wanna learn the terms used in Linux Gaming: https://github.com/NayamAmarshe/gameready/wiki/Linux-Gaming-Explained
+
 # Future Scope 🤫
 
 - Arch support btw (PR APPRECIATED)
