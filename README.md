@@ -11,7 +11,6 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 - Ubuntu
 - Linux Mint
 - elementaryOS
-- Pop!\_OS
 - Any other distro based on Ubuntu 20.04+
 
 # Installation Instructions 🚀
