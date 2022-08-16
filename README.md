@@ -15,7 +15,7 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 
 # Installation Instructions 🚀
 
-#### Method 1
+#### Method 1 (Recommended)
 
 1. Open the 'Terminal' app. You can use the keyboard shortcut: Ctrl + Alt + T.
 2. Copy the following line:
