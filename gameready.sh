@@ -28,9 +28,8 @@ cd || {
 	echo "Failed at command cd"
 	exit 1
 }
-wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
-chmod +x winetricks
-sudo cp winetricks /usr/local/bin
+sudo apt install winetricks
+sudo winetricks --self-update
 
 # INSTALL LUTRIS
 echo -e "\n\n${RED}<-- Installing Lutris -->${ENDCOLOR}"
@@ -40,16 +39,17 @@ sudo apt -y install lutris
 
 # INSTALL GAMEMODE
 echo -e "\n\n${RED}<-- Installing Gamemode -->${ENDCOLOR}"
-rm -rf gamemode
 sudo apt -y install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev build-essential
 git clone https://github.com/FeralInteractive/gamemode.git
 cd gamemode || {
 	echo "Failed at command cd gamemode"
 	exit 1
 }
-git checkout 1.7
+latestVersion=$(git ls-remote --tags https://github.com/FeralInteractive/gamemode.git | tail -n 1 | cut -d/ -f3-);
+git checkout $latestVersion
 zenity --warning --width 300 --title="Before Starting the Installation" --text="You'll be asked something like 'Install to /usr?', just press the Y key and hit enter!"
 ./bootstrap.sh
+rm -rf gamemode
 
 # INSTALL XANMOD KERNEL
 if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your current kernel is $(uname -r). We're going to install Xanmod kernel next, Xanmod is for enabling extra performance patches for kernels and this step is required for kernels below v5.16. Do you want to install Xanmod?"; then
