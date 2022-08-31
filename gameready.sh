@@ -28,7 +28,7 @@ cd || {
 	echo "Failed at command cd"
 	exit 1
 }
-sudo apt install winetricks
+sudo apt install -y winetricks
 sudo winetricks --self-update
 
 # INSTALL LUTRIS
