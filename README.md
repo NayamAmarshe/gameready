@@ -49,13 +49,6 @@ After the installation you can use Lutris to play games with ease.
 # Extras 🤓
 - Read this if you wanna learn the terms used in Linux Gaming: https://github.com/NayamAmarshe/gameready/wiki/Linux-Gaming-Explained
 
-# Future Scope 🤫
-
-- Arch support btw (PR APPRECIATED)
-- Fedora support (PR APPRECIATED)
-- Extra optimizations that could be done via drivers or applications (SUGGESTIONS NEEDED)
-- Mangohud + GOverlay?
-
 # FAQ ❓
 
 - **Why not install Bottles?** Because Lutris in my experience has worked way better than it and also has had better compatibility.
