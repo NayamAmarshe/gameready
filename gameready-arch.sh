@@ -6,6 +6,8 @@ ENDCOLOR="\e[0m"
 
 cd
 sudo pacman -Syu zenity
+sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 10/" /etc/pacman.conf
+
 # SHOW INITIAL DIALOGS
 zenity --info --text="Script made by Nayam Amarshe for the Lunix YouTube channel" --no-wrap
 zenity --warning --width 300 --title="Before Starting the Installation" --text="You may see a text asking for your password, just enter your password in the terminal. The password is for installing system libraries, so root access is required by GameReady. When you enter your password, do not worry if it doesn't show you what you typed, it's totally normal."
@@ -20,14 +22,14 @@ cd paru || {
 }
 makepkg -si
 cd || {
-	echo "Failed at command cd"
+	echo "Failed at command cd of paru"
 	exit 1
 }
 rm -r paru
 
 # INSTALL WINE
 echo -e "\n\n${RED}<-- Installing WINE -->${ENDCOLOR}"
-sed -i "/\[multilib\]/,/Include/"'s/^#//' /mnt/etc/pacman.conf
+sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 paru -S --noconfirm wine
 
 # INSTALL WINETRICKS
@@ -55,7 +57,7 @@ if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your c
 	{
 		echo -e "\n\n${RED}<-- Installing Xanmod Kernel -->${ENDCOLOR}"
     paru -S --noconfirm linux-xanmod 
-		zenity --info --width 200 --title="Success" --text="Xanmod kernel installed! Make sure to reboot after all the script finishes its work."
+		zenity --info --width 200 --title="Success" --text="Xanmod kernel installed!"
 	}
 fi
 
@@ -64,4 +66,4 @@ zenity --warning --title="Alright Listen Up" --width 300 --text="Now we're going
 echo -e "\n\n${RED}<-- Installing Important WINE Helpers -->${ENDCOLOR}"
 winetricks -q -v d3dx10 d3dx9 dotnet35 dotnet40 dotnet45 dotnet48 dxvk vcrun2008 vcrun2010 vcrun2012 vcrun2019 vcrun6sp6
 
-zenity --info --title="Success" --text="All done! Enjoy!"
+zenity --info --title="Success" --text="Make sure to reboot for all the changes to apply. Happy Gaming!"
