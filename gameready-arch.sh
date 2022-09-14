@@ -5,10 +5,10 @@ RED="\e[31m"
 ENDCOLOR="\e[0m"
 
 cd
-sudo pacman -Syu zenity
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 10/" /etc/pacman.conf
 
 # SHOW INITIAL DIALOGS
+sudo pacman -Syu --noconfirm zenity
 zenity --info --text="Script made by Nayam Amarshe for the Lunix YouTube channel" --no-wrap
 zenity --warning --width 300 --title="Before Starting the Installation" --text="You may see a text asking for your password, just enter your password in the terminal. The password is for installing system libraries, so root access is required by GameReady. When you enter your password, do not worry if it doesn't show you what you typed, it's totally normal."
 
@@ -22,7 +22,7 @@ cd paru || {
 }
 makepkg -si
 cd || {
-	echo "Failed at command cd of paru"
+	echo "Failed at command cd in paru"
 	exit 1
 }
 rm -r paru
@@ -46,7 +46,7 @@ paru -S --noconfirm lutris
 
 # INSTALL GAMEMODE
 echo -e "\n\n${RED}<-- Installing Gamemode -->${ENDCOLOR}"
-paru -S gamemode lib32-gamemode
+paru -S --noconfirm gamemode lib32-gamemode
 cd gamemode || {
 	echo "Failed at command cd gamemode"
 	exit 1
