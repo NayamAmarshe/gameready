@@ -3,8 +3,6 @@
 # COLOR VARIABLES
 RED="\e[31m"
 ENDCOLOR="\e[0m"
-
-cd
 sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 10/" /etc/pacman.conf
 
 # SHOW INITIAL DIALOGS
@@ -15,17 +13,17 @@ zenity --warning --width 300 --title="Before Starting the Installation" --text="
 # INSTALL PARU
 echo -e "\n\n${RED}<-- Installing PARU -->${ENDCOLOR}"
 sudo pacman -S --needed --noconfirm base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru || {
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru-bin || {
 	echo "Failed at command cd paru"
 	exit 1
 }
-makepkg -si
-cd || {
+makepkg --noconfirm -si
+cd .. || {
 	echo "Failed at command cd in paru"
 	exit 1
 }
-rm -r paru
+rm -r paru-bin
 
 # INSTALL WINE
 echo -e "\n\n${RED}<-- Installing WINE -->${ENDCOLOR}"
@@ -34,10 +32,6 @@ paru -S --noconfirm wine
 
 # INSTALL WINETRICKS
 echo -e "\n\n${RED}<-- Installing Winetricks -->${ENDCOLOR}"
-cd || {
-	echo "Failed at command cd"
-	exit 1
-}
 paru -S --noconfirm winetricks
 
 # INSTALL LUTRIS
@@ -47,10 +41,6 @@ paru -S --noconfirm lutris
 # INSTALL GAMEMODE
 echo -e "\n\n${RED}<-- Installing Gamemode -->${ENDCOLOR}"
 paru -S --noconfirm gamemode lib32-gamemode
-cd gamemode || {
-	echo "Failed at command cd gamemode"
-	exit 1
-}
 
 # INSTALL XANMOD KERNEL
 if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your current kernel is $(uname -r). We're going to install Xanmod kernel next, Xanmod is for enabling extra performance patches for kernels and this step is required for kernels below v5.16. Do you want to install Xanmod?"; then
