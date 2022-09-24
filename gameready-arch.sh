@@ -23,12 +23,12 @@ cd .. || {
 	echo "Failed at command cd in paru"
 	exit 1
 }
-rm -r paru-bin
+rm -rf paru-bin
 
 # INSTALL WINE
 echo -e "\n\n${RED}<-- Installing WINE -->${ENDCOLOR}"
 sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
-paru -S --noconfirm wine
+paru -S --noconfirm wine wine-mono 
 
 # INSTALL WINETRICKS
 echo -e "\n\n${RED}<-- Installing Winetricks -->${ENDCOLOR}"
@@ -43,11 +43,11 @@ echo -e "\n\n${RED}<-- Installing Gamemode -->${ENDCOLOR}"
 paru -S --noconfirm gamemode lib32-gamemode
 
 # INSTALL XANMOD KERNEL
-if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your current kernel is $(uname -r). We're going to install Xanmod kernel next, Xanmod is for enabling extra performance patches for kernels and this step is required for kernels below v5.16. Do you want to install Xanmod?"; then
+if zenity --question --width 300 --title="Install Linux-Zen Kernel?" --text="Your current kernel is $(uname -r). We're going to install linux-zen kernel next, linux-zen is for enabling extra performance patches for kernels and this step is required for kernels below v5.16. Do you want to install linux-zen?"; then
 	{
-		echo -e "\n\n${RED}<-- Installing Xanmod Kernel -->${ENDCOLOR}"
-    paru -S --noconfirm linux-xanmod 
-		zenity --info --width 200 --title="Success" --text="Xanmod kernel installed!"
+		echo -e "\n\n${RED}<-- Installing Linux-Zen Kernel -->${ENDCOLOR}"
+    paru -S --noconfirm linux-zen linux-zen-headers 
+		zenity --info --width 200 --title="Success" --text="Linux-Zen kernel installed!"
 	}
 fi
 
