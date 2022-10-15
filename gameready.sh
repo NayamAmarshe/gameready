@@ -76,7 +76,13 @@ then
   sudo sed -i "s/^#ParallelDownloads = 5$/ParallelDownloads = 10/" /etc/pacman.conf
   
   # SHOW INITIAL DIALOGS
-  sudo pacman -Syu --noconfirm zenity
+  package="zenity";
+  check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+  if [ -n "${check}" ] ; then
+      echo "${package} is installed";
+  elif [ -z "${check}" ] ; then
+      sudo pacman -Syu --noconfirm zenity
+  fi;
   zenity --info --text="Script made by Nayam Amarshe for the Lunix YouTube channel" --no-wrap
   zenity --warning --width 300 --title="Before Starting the Installation" --text="You may see a text asking for your password, just enter your password in the terminal. The password is for installing system libraries, so root access is required by GameReady. When you enter your password, do not worry if it doesn't show you what you typed, it's totally normal."
   
@@ -112,12 +118,20 @@ then
   echo -e "\n\n${RED}<-- Installing Gamemode -->${ENDCOLOR}"
   paru -S --noconfirm gamemode lib32-gamemode
   
-  # INSTALL LINUX-ZEN KERNEL
-  if zenity --question --width 300 --title="Install Linux-Zen Kernel?" --text="Your current kernel is $(uname -r). We're going to install linux-zen kernel next, linux-zen is for enabling extra performance patches for kernels. Do you want to install linux-zen?"; then
+  
+  # INSTALL XANMOD KERNEL
+  if zenity --question --width 300 --title="Install Xanmod Kernel?" --text="Your current kernel is $(uname -r). We're going to install Xanmod kernel next, Xanmod is for enabling extra performance patches for kernels. Do you want to install Xanmod?"; then
   	{
-  		echo -e "\n\n${RED}<-- Installing Linux-Zen Kernel -->${ENDCOLOR}"
-      paru -S --noconfirm linux-zen linux-zen-headers
-  		zenity --info --width 200 --title="Success" --text="linux-zen kernel installed!"
+  		echo -e "\n\n${RED}<-- Installing Xanmod Kernel -->${ENDCOLOR}"
+		sudo pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+		sudo pacman-key --lsign-key FBA220DFC880C036
+		sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+		sudo echo "[chaotic-aur]" >> /etc/pacman.conf
+		sudo echo "Include = /etc/pacman.d/chaotic-mirrorlist" >> /etc/pacman.conf
+		sudo pacman -Syu --noconfirm
+		sudo pacman -S linux-xanmod-edge linux-xanmod-edge-headers --noconfirm
+		sudo grub-mkconfig -o /boot/grub/grub.cfg
+  		zenity --info --width 200 --title="Success" --text="Xanmod kernel installed!"
   	}
   fi
   
