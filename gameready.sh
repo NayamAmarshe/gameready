@@ -32,7 +32,7 @@ if [[ ! -f /usr/bin/wine ]]; then
 		version=$debianVersion
 		distro=debian
 	fi
-	sudo wget -nc -P /etc/apt/sources.list.d/ "https://dl.winehq.org/wine-builds/$distro/dists/${version}/winehq-${version}.sources"
+	sudo wget -nc -P /etc/apt/sources.list.d/ "https://dl.winehq.org/wine-builds/${distro}/dists/${version}/winehq-${version}.sources"
 	sudo apt -y update
 	sudo apt install -y --install-recommends winehq-stable
 else
