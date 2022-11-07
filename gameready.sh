@@ -60,12 +60,20 @@ if [[ ! -f /usr/games/lutris ]]; then
 	echo -e "\n\n${RED}<-- Installing Lutris -->${ENDCOLOR}"
 	if [[ $(lsb_release -si) == "Ubuntu" ]]; then
 		sudo add-apt-repository -y ppa:lutris-team/lutris
+		sudo apt -y update
+		sudo apt -y install lutris
 	elif [[ $(lsb_release -si) == "Debian" ]]; then
-		echo "deb https://download.opensuse.org/repositories/home:/strycore/Debian_11/ ./" | sudo tee /etc/apt/sources.list.d/lutris.list
-		wget -q https://download.opensuse.org/repositories/home:/strycore/Debian_11/Release.key -O- | sudo tee /etc/apt/trusted.gpg.d/lutris.asc
+		# INSTALL CURL IF NOT INSTALLED
+		if ! dpkg -s curl >/dev/null 2>&1; then
+			sudo apt install curl
+		fi
+		latestLutrisVersion=$(curl --silent "https://api.github.com/repos/lutris/lutris/releases/latest" |
+    grep '"tag_name":' |
+    sed -n 's/[^0-9.]*\([0-9.]*\).*/\1/p');
+		curl -fsSL https://github.com/lutris/lutris/releases/download/v"${latestLutrisVersion}"/lutris_"${latestLutrisVersion}"_all.deb
+		sudo dpkg -i ./lutris_"${latestLutrisVersion}"_all.deb
+		rm ./lutris_"${latestLutrisVersion}"_all.deb
 	fi
-	sudo apt -y update
-	sudo apt -y install lutris
 else
 	echo -e "\n\n${RED}<-- Lutris is installed... Skipping -->${ENDCOLOR}"
 fi
