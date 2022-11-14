@@ -13,7 +13,6 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 - Kubuntu
 - KDE Neon
 - Xubuntu
-- elementaryOS
 - Any other distro based on Ubuntu 20.04+
 
 # Installation Instructions 🚀
