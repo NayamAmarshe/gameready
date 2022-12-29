@@ -23,6 +23,7 @@ Install WINE, Winetricks, Lutris, Xanmod Kernel, GameMode, WINE Dependencies in 
 - KDE Neon
 - Xubuntu
 - Any other distro based on Ubuntu 20.04+
+- Arch Linux and Arch Linux based distros
 
 # Installation Instructions 🚀
 
@@ -44,8 +45,6 @@ curl -L https://maglit.me/gameready | bash
 6. Unzip the file.
 7. Locate gameready.sh in the newly created gameready folder.
 8. Double click the file, if asked press `Run in Terminal` OR Open a new terminal window and drag the `gameready.sh` file onto it and press enter.
-
-Enjoy!
 
 # After installation 🕹
 
